@@ -5,6 +5,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{085CB5EC-8EEB-4C5A-836A-535B5B77DE33}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		Dockerfile = Dockerfile
+		entryPoint.sh = entryPoint.sh
 	EndProjectSection
 EndProject
 Global
