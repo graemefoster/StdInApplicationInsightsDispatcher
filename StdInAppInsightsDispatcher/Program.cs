@@ -45,6 +45,7 @@ async Task DispatchStandardInputToApplicationInsights(CancellationToken token, S
 
 Task<bool> ProcessLog(string msg, TelemetryClient telemetryClient, DateTimeOffset processStartTime)
 {
+    Console.WriteLine(msg);
     if (msg.Contains("\"type\":\"unstructured\"")) return Task.FromResult(false);
     var log = JsonConvert.DeserializeObject<Log>(msg);
 
@@ -73,8 +74,6 @@ Task<bool> ProcessLog(string msg, TelemetryClient telemetryClient, DateTimeOffse
             });
         return Task.FromResult(true);
     }
-
-    Console.WriteLine($"Ignoring type {log.Type}");
-
+    
     return Task.FromResult(false);
 }
